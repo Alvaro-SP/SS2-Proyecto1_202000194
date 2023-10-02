@@ -2,7 +2,8 @@ CREATE DATABASE comprasETLsemi2;
 
 USE comprasETLsemi2;
 
-CREATE TABLE Temporal (
+DROP TABLE IF EXISTS comp;
+CREATE TABLE comp (
     Fecha VARCHAR(50),
     CodProveedor VARCHAR(50),
     NombreProveedor VARCHAR(100),
@@ -10,7 +11,7 @@ CREATE TABLE Temporal (
     NumeroProveedor VARCHAR(50),
     WebProveedor VARCHAR(100),
     CodProducto VARCHAR(50),
-    NombreProducto VARCHAR(50),
+    NombreProducto VARCHAR(200),
     MarcaProducto VARCHAR(50),
     Categoria VARCHAR(50),
     SodSuSursal VARCHAR(50),
@@ -20,8 +21,8 @@ CREATE TABLE Temporal (
     Departamento VARCHAR(100),
     Unidades VARCHAR(50),
     CostoU VARCHAR(50)
-)
-
+);
+DROP TABLE IF EXISTS Compras;
 CREATE TABLE Compras(
     Fecha VARCHAR(50),
     CodProveedor VARCHAR(50),
@@ -30,7 +31,7 @@ CREATE TABLE Compras(
     NumeroProveedor VARCHAR(50),
     WebProveedor VARCHAR(100),
     CodProducto VARCHAR(50),
-    NombreProducto VARCHAR(50),
+    NombreProducto VARCHAR(200),
     MarcaProducto VARCHAR(50),
     Categoria VARCHAR(50),
     SodSuSursal VARCHAR(50),
@@ -40,15 +41,15 @@ CREATE TABLE Compras(
     Departamento VARCHAR(100),
     Unidades VARCHAR(50),
     CostoU VARCHAR(50)
-)
+);
 
-SELECT * FROM Temporal;
+SELECT * FROM comp;
 SELECT * FROM Compras;
 
-DELETE FROM Temporal;
+DELETE FROM comp;
 DELETE FROM Compras;
 
-DROP TABLE Temporal;
+DROP TABLE comp;
 DROP TABLE Compras;
 
 
